@@ -74,6 +74,7 @@ export default function Quiz() {
   };
 
   const calculateResult = (finalAnswers: string[]) => {
+    const base = import.meta.env.BASE_URL;
     const counts: Record<string, number> = { paris: 0, cretaceous: 0, florence: 0 };
     finalAnswers.forEach(ans => counts[ans]++);
     
@@ -84,17 +85,17 @@ export default function Quiz() {
     const resultsData: Record<string, any> = {
       paris: {
         name: 'Paris 1889',
-        image: '/paris.webp',
+        image: `${base}paris.webp`,
         description: 'Vous êtes un amateur d\'élégance et de progrès ! Le Paris de la Belle Époque est votre destination idéale pour admirer l\'Exposition Universelle.'
       },
       cretaceous: {
         name: 'Crétacé -65M',
-        image: '/cetace.jpg',
+        image: `${base}cetace.jpg`,
         description: 'L\'aventure coule dans vos veines ! Partez à la rencontre des dinosaures et découvrez une nature sauvage et indomptée.'
       },
       florence: {
         name: 'Florence 1504',
-        image: '/florence.jpg',
+        image: `${base}florence.jpg`,
         description: 'Votre âme d\'artiste vous guide vers la Renaissance italienne. Assistez au génie de Michel-Ange et à l\'éclosion des plus grands chefs-d\'œuvre.'
       }
     };

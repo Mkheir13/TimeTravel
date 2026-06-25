@@ -13,6 +13,7 @@ interface Destination {
 }
 
 export default function Destinations() {
+  const base = import.meta.env.BASE_URL;
   const destinations: Destination[] = [
     {
       id: 'paris-1889',
@@ -26,7 +27,7 @@ export default function Destinations() {
         'Cabarets et vie parisienne',
         'Art nouveau et impressionnisme'
       ],
-      image: '/paris.webp',
+      image: `${base}paris.webp`,
       color: 'from-blue-900 to-purple-900'
     },
     {
@@ -41,7 +42,7 @@ export default function Destinations() {
         'Volcans actifs',
         'Observation sécurisée garantie'
       ],
-      image: '/cetace.jpg',
+      image: `${base}cetace.jpg`,
       color: 'from-green-900 to-emerald-900'
     },
     {
@@ -56,7 +57,7 @@ export default function Destinations() {
         'Architecture florentine',
         'Rencontres avec les Médicis'
       ],
-      image: '/florence.jpg',
+      image: `${base}florence.jpg`,
       color: 'from-orange-900 to-red-900'
     }
   ];
